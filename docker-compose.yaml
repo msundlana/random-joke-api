@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  random-joke-api:
+    image: msundlana/random-joke-api:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - random-jokes-network
+    depends_on:
+      - rabbitmq
+    environment:
+      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
+      RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING.ZIPKIN_SENDER_TYPE: rabbit
+
+  zipkin-server:
+    image: openzipkin/zipkin:2.23
+    ports:
+      - "9411:9411"
+    networks:
+      - random-jokes-network
+    depends_on:
+      - rabbitmq
+    environment:
+      RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+
+  rabbitmq:
+    image: rabbitmq:3.5.3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - random-jokes-network
+
+networks:
+  random-jokes-network:
+
+volumes:
+  pgdata:
