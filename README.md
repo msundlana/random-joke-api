@@ -71,7 +71,7 @@ To run the api you will need to do the following
        metrics, and understanding traffic or the state of our database is trivial.
        The actuator mainly exposes operational information about the running application — health, metrics, info, dump,
        env, etc. It uses HTTP endpoints or JMX beans to enable us to interact with it.
-   9. For Distributed Tracing http://localhost:9411/zipkin, only configured under the `prod` profile allowing.
+   9. For Distributed Tracing `http://localhost:9411/zipkin`, only configured under the `prod` profile allowing.
 
 
 ### Running the tests
