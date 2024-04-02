@@ -52,7 +52,7 @@ To run the api you will need to do the following
         1. Build the application using `mvn package`
         2. Start the app
            using `mvn spring-boot:run` ([Other Spring Boot Scripts here](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#goals))
-    3. If running with your IDE just hit the play button on `RecipeManagementServiceApplication.java`
+    3. If running with your IDE just hit the play button on `RandomJokeApplication.java`
     4. If running using docker 
        - Update [`.env`](.env) file with environmental variables used to configure the database 
         connection settings in the [`application-prod.properties`](./src/main/resources/application-prod.properties) directory:
