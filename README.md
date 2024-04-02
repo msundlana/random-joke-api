@@ -39,7 +39,7 @@ environment variables are set appropriately
 
 To clone repository, run the following commands on a terminal:
 
-`git clone https://github.com/msundlana/recipe-management-api.git` this will clone the repository onto your local machine.
+`git clone https://github.com/msundlana/random-joke-api.git` this will clone the repository onto your local machine.
 
 ### Running the API
 
