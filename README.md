@@ -10,7 +10,7 @@ This README would normally document whatever steps are necessary to get the appl
 
 ## What is this repository for?
 
-- REST APIs for managing favorite recipes.
+- REST APIs for retrieving random jokes.
 
 ## Dependencies
 
