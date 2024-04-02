@@ -72,7 +72,7 @@
 
 #### Live reloads
 
-- `Spring Boot Dev Tools` for to provide fast application restarts, LiveReload, and configurations
+- `Spring Boot Dev Tools` to provide fast application restarts, LiveReload, and configurations
   for enhanced development experience.
 
 #### Reduce Code Boiler plates
