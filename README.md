@@ -1,4 +1,4 @@
-# Recipe Manager Application
+# Random Jokes Application
 
 A Java SpringBoot application to extract a random joke from an external API.
 
