@@ -7,36 +7,22 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - random-jokes-network
-    depends_on:
-      - rabbitmq
+      - random-joke-network
     environment:
-      SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
-      RABBIT_URI: amqp://guest:guest@rabbitmq:5672
-      SPRING_RABBITMQ_HOST: rabbitmq
-      SPRING.ZIPKIN_SENDER_TYPE: rabbit
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
   zipkin-server:
     image: openzipkin/zipkin:2.23
+    mem_limit: 300m
     ports:
       - "9411:9411"
     networks:
-      - random-jokes-network
-    depends_on:
-      - rabbitmq
-    environment:
-      RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+      - random-joke-network
+    restart: always #Restart if there is a problem starting up
 
-  rabbitmq:
-    image: rabbitmq:3.5.3-management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    networks:
-      - random-jokes-network
 
 networks:
-  random-jokes-network:
+  random-joke-network:
 
 volumes:
   pgdata:

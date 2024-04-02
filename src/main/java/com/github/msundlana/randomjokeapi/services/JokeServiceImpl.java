@@ -45,4 +45,5 @@ public class JokeServiceImpl implements JokeService {
         return randomJoke;
     }
 
+
 }

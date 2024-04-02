@@ -6,7 +6,7 @@ ARG JAR_FILE=target/*.jar
 # cd /opt/app
 WORKDIR /opt/app
 COPY . .
-# cp target/recipe-management-api.jar /opt/app/app.jar
+# cp target/random-joke-api.jar /opt/app/app.jar
 COPY ${JAR_FILE} app.jar
 
 # java -jar /opt/app/app.jar

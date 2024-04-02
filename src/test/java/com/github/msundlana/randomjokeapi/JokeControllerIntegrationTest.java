@@ -1,7 +1,6 @@
 package com.github.msundlana.randomjokeapi;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.msundlana.randomjokeapi.models.JokeDto;
 import com.github.msundlana.randomjokeapi.models.JokeNotFoundException;
 import com.github.msundlana.randomjokeapi.services.JokeService;
@@ -31,8 +30,6 @@ public class JokeControllerIntegrationTest {
 
     private final String basePath = "/api/joke/";
 
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @Test
     public void testRandomJoke() throws Exception {

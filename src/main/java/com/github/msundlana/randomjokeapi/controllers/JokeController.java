@@ -2,6 +2,9 @@ package com.github.msundlana.randomjokeapi.controllers;
 
 import com.github.msundlana.randomjokeapi.models.JokeDto;
 import com.github.msundlana.randomjokeapi.services.JokeService;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,9 @@ public class JokeController {
     private JokeService jokeService;
 
     @GetMapping("/")
+    @CircuitBreaker(name="random-joke-api")
+    @Bulkhead(name="random-joke-api")
+    @RateLimiter(name = "random-joke-api")
     public ResponseEntity<JokeDto> getRandomJoke() {
         logger.info("Received request to get joke");
 
