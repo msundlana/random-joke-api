@@ -30,7 +30,7 @@ public class JokeServiceTest {
     @Mock
     private JokeRepository jokeRepository;
     @InjectMocks
-    private JokeService recipeService = new JokeServiceImpl();
+    private JokeService jokeService = new JokeServiceImpl();
 
 
     @Test
@@ -46,7 +46,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        var result = recipeService.getRandomJoke();
+        var result = jokeService.getRandomJoke();
 
         assertNotNull(result);
         assertEquals(1,jokes.size());
@@ -66,7 +66,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        assertThrows(JokeNotFoundException.class, () ->recipeService.getRandomJoke());
+        assertThrows(JokeNotFoundException.class, () ->jokeService.getRandomJoke());
     }
 
     @Test
@@ -85,7 +85,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        assertThrows(JokeNotFoundException.class, () ->recipeService.getRandomJoke());
+        assertThrows(JokeNotFoundException.class, () ->jokeService.getRandomJoke());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        assertThrows(JokeNotFoundException.class, () ->recipeService.getRandomJoke());
+        assertThrows(JokeNotFoundException.class, () ->jokeService.getRandomJoke());
     }
 
     @Test
@@ -123,7 +123,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        assertThrows(JokeNotFoundException.class, () ->recipeService.getRandomJoke());
+        assertThrows(JokeNotFoundException.class, () ->jokeService.getRandomJoke());
     }
 
     @Test
@@ -142,7 +142,7 @@ public class JokeServiceTest {
         );
 
         when(jokeRepository.findJokes()).thenReturn(jokes);
-        assertThrows(JokeNotFoundException.class, () ->recipeService.getRandomJoke());
+        assertThrows(JokeNotFoundException.class, () ->jokeService.getRandomJoke());
     }
 
 }
